@@ -22,4 +22,5 @@ statsmodels
 xgboost
 lightgbm
 catboost
-pydantic 
+pydantic
+-e .
