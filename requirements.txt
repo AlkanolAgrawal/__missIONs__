@@ -23,4 +23,5 @@ xgboost
 lightgbm
 catboost
 pydantic
+dill
 -e .
