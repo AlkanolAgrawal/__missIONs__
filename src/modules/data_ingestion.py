@@ -2,6 +2,8 @@ import os,sys
 from src.exceptions import CustomException
 from src.logger import logging
 import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass 
 from src.modules.data_transform import DataTransformation
@@ -58,4 +60,4 @@ if __name__ == "__main__":
     train_arr,test_arr,_ = data_transformation.initiate_data_trans(train_data,test_data)
 
     model_trainer = ModelTrainer()
-    print(model_trainer.initiate_model_trainer(train_arr,test_arr))
+    model_trainer.initiate_model_trainer(train_arr,test_arr)

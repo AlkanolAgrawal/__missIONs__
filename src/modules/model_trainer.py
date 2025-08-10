@@ -46,9 +46,53 @@ class ModelTrainer:
                 "XGBRegressor": XGBRegressor(verbosity=0),
                 "CatBoostRegressor": CatBoostRegressor(verbose=0)
             }
-            model_report :dict = evaluate_models(X_train,y_train,X_test,y_test,models)
+
+            parameters = {
+                "LinearRegression": {},
+                "KNeighborsRegressor": {
+                    "n_neighbors": [3, 5, 7],
+                    "weights": ["uniform", "distance"],
+                    "algorithm": ["ball_tree", "kd_tree"]
+                },
+                "DecisionTreeRegressor": {
+                    'criterion': ['squared_error', 'absolute_error', 'poisson'],
+                    # 'splitter': ['best', 'random'],
+                    'max_features': ['auto', 'sqrt', 'log2'],
+                    'max_depth': [10, 20, 30]
+                },
+                "RandomForestRegressor": {
+                    'criterion': ['squared_error', 'absolute_error', 'poisson'],
+                    'max_features': ['auto', 'sqrt', 'log2'],
+                    'max_depth': [10, 20, 30],
+                    'n_estimators': [10,50,100]
+                },
+                "GradientBoostingRegressor": {
+                    'loss': ['squared_error', 'huber', 'quantile'],
+                    'learning_rate': [0.01, 0.1, 0.2],
+                    'n_estimators': [10, 50, 100],
+                    'max_depth': [10, 20, 30],
+                    # 'max_features': ['auto', 'sqrt', 'log2']
+                },
+                "AdaBoostRegressor": {
+                    'n_estimators': [10, 50, 100],
+                    'learning_rate': [0.01, 0.1]
+                },
+                "XGBRegressor": {
+                    'n_estimators': [10, 50, 100],
+                    'max_depth': [10, 20, 30],
+                    'learning_rate': [0.01, 0.1, 0.2]
+                },
+                "CatBoostRegressor": {
+                    'iterations': [100, 200, 300],
+                    'depth': [10, 20, 30],
+                    'learning_rate': [0.01, 0.1, 0.2]
+                }
+            }
+
+            model_report :dict = evaluate_models(X_train,y_train,X_test,y_test,models,parameters)
             model_report = sorted(model_report.items(), key=lambda x: x[1], reverse=True)
             logging.info(f"Model report: {model_report}")
+            print(f"Model report: {model_report}")
 
             best_model_name = model_report[0][0]
             best_model = models[best_model_name]

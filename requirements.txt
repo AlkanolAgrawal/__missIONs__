@@ -3,25 +3,9 @@ pandas
 scikit-learn
 matplotlib
 seaborn
-nltk
-spacy
-scipy
 requests
-beautifulsoup4
 flask
-django
-fastapi
-pytest
-jupyterlab
-notebook
-ipython
-scikit-image
-opencv-python
-plotly
-statsmodels
 xgboost
-lightgbm
 catboost
-pydantic
 dill
 -e .
