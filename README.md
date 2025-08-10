@@ -11,6 +11,7 @@
 
 ## 📊 Example Prediction
 > **Input:** Student demographics, Parental Education, Ethnicity, etc.
+
 > **Output:** Predicted Mathematics Score.
 
 ---
