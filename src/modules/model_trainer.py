@@ -106,3 +106,4 @@ class ModelTrainer:
             return r2_score(y_test, predicted)
         except Exception as e:
             raise CustomException(e, sys)
+        
