@@ -22,7 +22,7 @@
 git clone https://github.com/AlkanolAgrawal/__missIONs__
 
 # Navigate to the project directory
-cd missIONs
+cd AlkanolAgrawal/__missIONs__
 
 # Install dependencies
 pip install -r requirements.txt
