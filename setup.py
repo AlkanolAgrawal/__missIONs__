@@ -20,4 +20,5 @@ setup(
     author_email='coding.alkanol@gmail.com',
     packages=find_packages(),
     install_requires=get_requireds('requirements.txt'),
+    
 )
