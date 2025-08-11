@@ -44,3 +44,18 @@ def load_object(file_path):
             return dill.load(file)
     except Exception as e:
         raise CustomException(e, sys)
+    
+
+def get_requireds(file_path):
+    with open(file_path) as f:
+        lst = f.readlines()
+        lstn=[]
+        for x in lst:
+            a=x.strip()
+            if a == "":
+                continue
+            if "-e ." == a:
+                continue
+            else:
+                lstn.append(a)
+    return lstn
