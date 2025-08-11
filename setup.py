@@ -1,18 +1,6 @@
 from setuptools import setup, find_packages
+from src.utils import get_requireds
 
-def get_requireds(file_path):
-    with open(file_path) as f:
-        lst = f.readlines()
-        lstn=[]
-        for x in lst:
-            a=x.strip()
-            if a == "":
-                continue
-            if "-e ." == a:
-                continue
-            else:
-                lstn.append(a)
-    return lstn
 setup(
     name='First_Mission',
     version='0.0.1',
