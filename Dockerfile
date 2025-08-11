@@ -1,6 +1,7 @@
 FROM python:3.11-slim
 # Using slim version reduces image size by ~700MB compared to full python image
 
+
 WORKDIR /app
 # Sets working directory to /app inside container
 
