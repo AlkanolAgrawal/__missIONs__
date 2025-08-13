@@ -1,6 +1,5 @@
 import os , sys
 from src.logger import logging
-import numpy as np
 import pandas as pd
 import dill
 from sklearn.metrics import r2_score
