@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify,render_template
 import numpy as np
+import os
 import pandas as pd
 from src.pipelines.predict_pline import PredictPipeline, CustomData
 from sklearn.preprocessing import StandardScaler
@@ -35,7 +36,6 @@ def predict():
         return render_template('predict.html', prediction=results)
     
 
-
-
-if __name__=="__main__":
-    app.run(host="0.0.0.0", port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
