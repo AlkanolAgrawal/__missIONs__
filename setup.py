@@ -1,13 +1,11 @@
 from setuptools import setup, find_packages
-
-with open('requirements.txt') as f:
-    requireds = f.read().splitlines()
+from src.utils import get_requireds
 
 setup(
-    name='First_Mission',
+    name='First_Mission_SPP',
     version='0.0.1',
     author='Alkanol',
     author_email='coding.alkanol@gmail.com',
     packages=find_packages(),
-    install_requires=requireds,
+    install_requires=get_requireds('requirements.txt'),
 )
