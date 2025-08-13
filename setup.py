@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
-from src.utils import get_requireds
+
+with open('requirements.txt') as f:
+    requireds = f.read().splitlines()
 
 setup(
     name='First_Mission',
@@ -7,5 +9,5 @@ setup(
     author='Alkanol',
     author_email='coding.alkanol@gmail.com',
     packages=find_packages(),
-    install_requires=get_requireds('requirements.txt'),
+    install_requires=requireds,
 )
