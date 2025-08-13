@@ -1,6 +1,5 @@
 import os , sys
 from src.logger import logging
-import pandas as pd
 import dill
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
